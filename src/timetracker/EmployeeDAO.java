@@ -82,10 +82,11 @@ public class EmployeeDAO {
      */
     public boolean checkInStatus(int id) throws SQLException, ClassNotFoundException {
         boolean status = false;
-        String checkStatus = "SELECT * FROM clock WHERE id =" + id + " AND punchType= " + "I";
+        String checkStatus = "SELECT * FROM clock WHERE id =" + id + " OR punchType= " + "'I'";
         connection = DBConnection.getConnection();
+        
         PreparedStatement st = connection.prepareStatement(checkStatus);
-        ResultSet rs = st.getResultSet();
+        ResultSet rs = st.executeQuery();
         System.out.println(rs);
         if (rs != null) {
             status = true;
