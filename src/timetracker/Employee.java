@@ -1,3 +1,5 @@
+package timetracker;
+
 /*
  * Employee entity
  */

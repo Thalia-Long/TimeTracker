@@ -5,10 +5,11 @@
  */
 package timetracker;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.dateTime;
-import static java.time.Instant.now;
-import java.util.Calendar;
-import java.util.Date;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -19,15 +20,12 @@ public class TimeTracker {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-       Date time;
-        time = new Date();
-        System.out.println( now());
-        System.out.println(time.toString());
-       java.sql.Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-       
-        System.out.println(date);
-        
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+      
+        EmployeeDAO emp = new EmployeeDAO();
+
+     
+     
     }
     
 }
